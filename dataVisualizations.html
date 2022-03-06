@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <body>
+    <div id="myPlot" style="width: 100%; max-width: 1024px"></div>
+
+    <script>
+      var xArray = [512, 1024, 2048, 4196];
+      var yArray = [0.4567, 3.7214, 29.9308, 254.3844];
+      var yArrayTwo = [0.6177, 6.8506, 85.5447, 801.4539];
+      var yArrayThree = [0.0772, 0.9109, 5.6076, 49.614];
+      var yArrayFour = [0.1038, 1.572, 57.5213, 745.6761];
+      var yArrayFive = [0.0785, 0.6309, 6.0299, 49.7354];
+      var yArraySix = [0.1071, 1.4844, 56.0582, 726.695];
+      var yArraySeven = [0.0742, 0.6458, 5.6088, 42.5439];
+      var yArrayEight = [0.1037, 1.5645, 58.8549, 695.5012];
+
+      // Define Data
+      var data = [
+        {
+          x: xArray,
+          y: yArray,
+          mode: "lines",
+          name: "Row Wise Multiplication, GCC in O",
+        },
+        {
+          x: xArray,
+          y: yArrayTwo,
+          mode: "lines",
+          name: "Standart Multiplication, GCC in O",
+        },
+        {
+          x: xArray,
+          y: yArrayThree,
+          mode: "lines",
+          name: "Row Wise Multiplication, GCC in O1",
+        },
+        {
+          x: xArray,
+          y: yArrayFour,
+          mode: "lines",
+          name: "Standart Multiplication, GCC in O1",
+        },
+        {
+          x: xArray,
+          y: yArrayFive,
+          mode: "lines",
+          name: "Row Wise Multiplication, GCC in O2",
+        },
+        {
+          x: xArray,
+          y: yArraySix,
+          mode: "lines",
+          name: "Standart Multiplication, GCC in O2",
+        },
+        {
+          x: xArray,
+          y: yArraySeven,
+          mode: "lines",
+          name: "Row Wise Multiplication, GCC in O3",
+        },
+        {
+          x: xArray,
+          y: yArrayEight,
+          mode: "lines",
+          name: "Standart Multiplication, GCC in O3",
+        },
+      ];
+
+      // Define Layout
+      var layout = {
+        xaxis: { range: [512, 4196], title: "Matrix Size" },
+        yaxis: { range: [0, 900], title: "Multiplication Time in Second" },
+        title: "Matrix Multiplication Time Consuming with gcc -o Flag",
+      };
+
+      // Display using Plotly
+      Plotly.newPlot("myPlot", data, layout);
+    </script>
+  </body>
+</html>
